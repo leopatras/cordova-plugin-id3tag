@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"
+  id="cordova-plugin-id3tag"
+  version="1.0.0">
+  <name>Id3Tag</name>
+  <keywords>cordova,music,media,plugin,Id3Tag</keywords>
+  <repo>https://github.com/leopatras/cordova-plugin-id3tag</repo>
+  <description>Id3Tag cordova plugin for Genero and Cordova apps</description>
+  <license>Apache</license>
+  <author>Leo</author>
+
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/Id3Tag.js" target="js/Id3Tag.js"/>
+
+  <js-module src="www/Id3Tag.js" name="Id3Tag">
+    <clobbers target="Id3Tag" />
+  </js-module>
+
+  <!-- android -->
+  <!-- windows -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="Id3Tag">
+        <param name="ios-package" value="Id3Tag" />
+      </feature>
+    </config-file>
+    <source-file src="src/ios/Id3Tag.m" />
+    <framework src="AVFoundation.framework" />
+  </platform>
+
+</plugin>
